@@ -1,28 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from '../../environments/environment';
 
-// @NgModule({
-//   imports: [
-//     StoreModule.forRoot({}),
-//     EffectsModule.forRoot([]),
-//     environment.production ? [] : StoreDevtoolsModule.instrument()
-//   ]
-// })
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppReducer } from './reducers';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeListComponent } from './employee.list/employee.list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeeComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forFeature()
+    StoreModule.forRoot({ employees : AppReducer })
   ],
   providers: [],
   bootstrap: [AppComponent]
