@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState } from '../states/AppState';
+import { AppState } from '../../states/AppState';
 import { Store } from '@ngrx/store';
-import { createEmployeeAction } from '../actions/action';
+import { createEmployeeAction } from '../../actions/action';
 
 @Component({
   selector: 'app-employee',

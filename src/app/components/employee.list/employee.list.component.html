@@ -1,0 +1,5 @@
+<p>employee.list works!</p>
+<p>{{employees$|async|json}}</p>
+<ul *ngIf="employees$|async as t;">
+  <li *ngFor=" let item of t.employees">{{item.name}}</li>
+</ul>

@@ -1,6 +1,6 @@
 import { Employee } from '../models/employee.model';
 
-export interface AppState {
+export class AppState {
     employees: Employee[];
 }
 

@@ -4,9 +4,10 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AppReducer } from './reducers';
-import { EmployeeComponent } from './employee/employee.component';
-import { EmployeeListComponent } from './employee.list/employee.list.component';
+import { AppReducer, metaReducers } from './reducers';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { EmployeeListComponent } from './components/employee.list/employee.list.component';
+import { AppStateReducer } from './reducers/reducer';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { EmployeeListComponent } from './employee.list/employee.list.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot({ employees : AppReducer })
+    StoreModule.forRoot({appState : AppStateReducer})
   ],
   providers: [],
   bootstrap: [AppComponent]
